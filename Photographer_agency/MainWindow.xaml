@@ -1,0 +1,85 @@
+﻿<Window x:Class="Photographer_agency.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Photographer_agency"
+        mc:Ignorable="d"
+        Title="Агенство фотографий"
+        WindowState="Maximized" MinHeight="530" MinWidth="600">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+       
+
+        <StackPanel Grid.Column="0">
+            <Viewbox>
+                <TextBlock Padding="5" FontSize="20" Foreground="DarkGray" 
+                           FontFamily="Impact">Наши лучшие работы</TextBlock>                
+            </Viewbox>
+            <ScrollViewer Height="450" VerticalScrollBarVisibility="Visible">
+                <StackPanel>
+                    <Image Source="Resources\1.png" MaxHeight="150px"/>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" 
+                               FontWeight="Black">Танос</TextBlock>
+                    <Image Source="Resources\2.jpg" MaxHeight="150px"/>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" 
+                               FontWeight="Black">Роберт</TextBlock>
+                    <Image Source="Resources\3.jpg" MaxHeight="150px"/>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" 
+                               FontWeight="Black">Хаус</TextBlock>
+                    <Image Source="Resources\5.jpg" MaxHeight="150px"/>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" 
+                               FontWeight="Black">Грут</TextBlock>
+                    <Image Source="Resources\6.jfif" MaxHeight="150px"/>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" 
+                               FontWeight="Black">Ракета</TextBlock>
+                    <Image Source="Resources\4.jpg" MaxHeight="150px"/>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" 
+                               FontWeight="Black">Арсений</TextBlock>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+        <TabControl Grid.Column="1" FontSize="16" >
+            <TabItem Header="Инструменты">
+                <StackPanel>
+                    <Menu FontSize="14">
+                        <MenuItem Header="Файл">
+                            <MenuItem Header="Новый"/>
+                            <MenuItem Header="Открыть"/>
+                        </MenuItem>
+                        <MenuItem Header="Редактировать">
+                            <MenuItem Header="Обрезать">
+                                <MenuItem Header="Обрезать квадрат"/>
+                                <MenuItem Header="Произвольная обрезка"/>
+                            </MenuItem>
+                            <MenuItem Header="Изменить цвет"/>                            
+                        </MenuItem>
+                    </Menu>
+                    <TextBlock FontFamily="Impact" FontSize="20" Padding="5 0 0 0">Услуги</TextBlock>
+                    <ListBox BorderBrush="White">
+                        <TextBlock FontSize="16">Фотография</TextBlock>
+                        <TextBlock FontSize="16">Ретуширование</TextBlock>
+                        <TextBlock FontSize="16">Исправление недостатков</TextBlock>
+                        <TextBlock FontSize="16">Изменение фона</TextBlock>
+                        <ListBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Редактировать" FontSize="14"/>
+                                <MenuItem Header="Удалить" FontSize="14"/>
+                                <MenuItem Header="Создать на основе" FontSize="14"/>
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                    </ListBox>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Расписание"/>
+        </TabControl>
+        <Viewbox Grid.Column="2" VerticalAlignment="Top" Margin="20 0 20 20">
+            <Calendar/>        
+        </Viewbox>        
+    </Grid>
+</Window>
